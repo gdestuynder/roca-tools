@@ -3,6 +3,8 @@ from ldif3 import LDIFParser
 from pprint import pprint
 import os, sys, subprocess
 
+# This script uses 'keys.ldif' as input LDIF file AND expect `sshPublicKey` as attribute for SSH public keys
+
 def detect(dn, sshkey):
     if len(sshkey) < 10 or not sshkey.startswith('ssh'):
         print('SKIP', dn, sshkey, "is of incorrect format, skipping")
